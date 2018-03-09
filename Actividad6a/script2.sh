@@ -1,8 +1,8 @@
 read -p "Introduce un numero " X
 
-while [ $X -le 0 ]; do 
+while [ $X -le 0 ]; do
     read -p "Escribe un numero mayor que 0:" X
-done 
+done
 
 if [ `expr $X % 2` -eq 0 ]; then
     echo "El numero es par"
