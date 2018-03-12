@@ -1,8 +1,13 @@
-x=$1
+valor=$1
 
-for i in $(cat nombres.txt); do
+for i in $(cat nombres.txt);do
     mkdir $i
-    for j in `seq 1 $x`; do
-	mkdir $i/$i$j
+    cd $i
+
+    for j in `seq 1 $valor`;do
+	mkdir personal$j
     done
+
+    cd ..
+
 done
