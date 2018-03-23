@@ -1,4 +1,3 @@
-
 fich=precipitaciones.txt
 max=`cat $fitch | wc -l `
 
