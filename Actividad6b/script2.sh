@@ -1,9 +1,11 @@
+suma=0
+cont=0
 
-fich=precipitaciones.txt
-max=`cat $fitch | wc -l `
-
-for i in `seq 1 $max`;do
-    dia=`cat $fitch | head -$i | tail-1 | awk '{print $1}'`
-    lit=`cat $fitch | head -$i | tail-1 | awk '{print $2}'`
-    echo "He leido $dia y $lit"
+for i in $(cat precipitaciones.txt | awk '{print $2}'); do
+    suma=$((suma+i))
+    cont=$((cont + 1))
 done
+
+media=`echo "scale=2; $suma/$cont" | bc`
+
+echo "La media de precipitaciones es $media"
