@@ -1,20 +1,17 @@
-pares=0
-impares=0
+cont1=0
+cont2=0
 
-for i in $(cat numeros.txt); do
-    if [ $((i%2)) -eq 0 ]; then
-	echo $i
-	pares=$((pares+1))
-    fi
+for i in $(cat numeros); do
+
+	par=$((i%2))
+	if [ $par = 0 ]; then
+		echo "El valor $i es par"
+		cont1=$((cont1+1))
+
+	else
+		echo "El valor $i es impar"
+		cont2=$((cont2+1))
+	fi
 done
-
-echo "El total de números pares es $pares"
-
-for i in $(cat numeros.txt); do
-    if [ $((i%2)) -ne 0 ]; then
-	echo $i
-	impares=$((impares+1))
-    fi
-done
-
-echo "El total de números impares es $impares"
+echo "El total de valores pares es $cont1"
+echo "El total de valores impares es $cont2"

@@ -1,11 +1,10 @@
-suma=0
+acumula=0
 cont=0
 
-for i in $(cat precipitaciones.txt | awk '{print $2}'); do
-    suma=$((suma+i))
-    cont=$((cont + 1))
+for i in $(cat precipitaciones | awk '{print $2}');do
+	acumula=$((acumula+i))
+	cont=$((cont+1))
+	media=$((acumula/cont))
 done
-
-media=`echo "scale=2; $suma/$cont" | bc`
 
 echo "La media de precipitaciones es $media"
