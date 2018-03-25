@@ -1,12 +1,12 @@
-read -p "Introduce el valor de X: $X" X
-read -p "Introduce el valr de Y: $Y" Y
+read -p "Introduce el primer valor: " valor1
+read -p "Introduce el segundo valor: " valor2
 
-if [ $X -gt $Y ]; then
-    echo "El mayor es: $X"
-else
-    if [ $Y -gt $X ]; then
-	echo "El mayor es: $Y"
-else [ $X -eq $Y ]; then
+if [ $valor1 -gt $valor2 ]; then
+	echo "El mayor es $valor1"
+fi
+if [ $valor2 -gt $valor1 ]; then
+	echo "El mayor es $valor2"
+fi
+if [ $valor1 -eq $valor2 ]; then
 	echo "Son iguales"
-    fi
 fi
